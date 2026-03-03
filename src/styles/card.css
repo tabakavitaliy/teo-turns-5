@@ -364,7 +364,7 @@ body {
 }
 .wolf-tail {
   position: absolute;
-  top: 16px; right: -4px;
+  top: 16px; right: 40px;
   width: 6px; height: 18px;
   background: #d4cfc8;
   border: 2px solid #a8a29e;
