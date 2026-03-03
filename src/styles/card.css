@@ -1,0 +1,962 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2d1a0e;
+  font-family: 'VT323', monospace;
+  padding: 20px;
+}
+
+.card {
+  max-width: 640px;
+  width: 100%;
+  background: #5a8f3c;
+  border: 8px solid #3b5e28;
+  box-shadow: 
+    inset 0 0 0 4px #6aaf48,
+    0 0 0 4px #2a4a1a,
+    0 8px 32px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.dirt-layer {
+  height: 60px;
+  background: 
+    repeating-linear-gradient(90deg, #6b4226 0px, #6b4226 15px, #7a4f2e 15px, #7a4f2e 30px),
+    linear-gradient(180deg, #5a3720, #4a2d18);
+  background-size: 30px 100%, 100% 100%;
+  border-top: 4px solid #3b5e28;
+  position: relative;
+}
+.dirt-layer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 8px;
+  background: repeating-linear-gradient(90deg, 
+    #5a8f3c 0px, #5a8f3c 8px, 
+    #4a7a30 8px, #4a7a30 16px
+  );
+}
+
+.header {
+  text-align: center;
+  padding: 30px 20px 10px;
+  position: relative;
+}
+
+.invite-text {
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  font-size: 11px;
+  text-shadow: 2px 2px 0 #2a4a1a;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.characters-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 14px;
+  margin: 15px 0 10px;
+}
+
+/* ========== STEVE ========== */
+.steve {
+  width: 60px;
+  image-rendering: pixelated;
+}
+.steve-head {
+  width: 32px; height: 32px;
+  margin: 0 auto;
+  position: relative;
+  background: #c69c6d;
+  border: 2px solid #8b6914;
+}
+.steve-hair {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 10px; background: #3b2212;
+}
+.steve-hair::after {
+  content:''; position: absolute;
+  bottom: -4px; left: 0; width: 6px; height: 8px;
+  background: #3b2212;
+}
+.steve-eye-l, .steve-eye-r {
+  position: absolute; width: 5px; height: 4px;
+  background: #fff; top: 14px;
+}
+.steve-eye-l { left: 6px; }
+.steve-eye-r { right: 6px; }
+.steve-eye-l::after, .steve-eye-r::after {
+  content:''; position: absolute;
+  width: 3px; height: 4px; background: #4a3728;
+  top: 0; right: 0;
+}
+.steve-nose {
+  position: absolute; width: 4px; height: 3px;
+  background: #b5845a; top: 19px; left: 50%;
+  transform: translateX(-50%);
+}
+.steve-mouth {
+  position: absolute; width: 8px; height: 2px;
+  background: #7a5638; bottom: 4px; left: 50%;
+  transform: translateX(-50%);
+}
+.steve-body {
+  width: 32px; height: 24px;
+  margin: 0 auto;
+  background: #00a8a8;
+  border: 2px solid #007878;
+  position: relative;
+}
+.steve-arm-l, .steve-arm-r {
+  position: absolute; width: 12px; height: 24px; top: 0;
+}
+.steve-arm-l {
+  left: -14px; background: #00a8a8; border: 2px solid #007878;
+}
+.steve-arm-l::after {
+  content:''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 6px; background: #c69c6d;
+}
+.steve-arm-r {
+  right: -14px; background: #00a8a8; border: 2px solid #007878;
+}
+.steve-arm-r::after {
+  content:''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 6px; background: #c69c6d;
+}
+.steve-legs {
+  width: 32px; margin: 0 auto; display: flex;
+}
+.steve-leg {
+  width: 16px; height: 20px;
+  background: #3b4e8f;
+  border: 2px solid #2a3a6a;
+  position: relative;
+}
+.steve-leg::after {
+  content:''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 4px; background: #555;
+}
+
+/* ========== ALEX ========== */
+.alex {
+  width: 56px;
+  image-rendering: pixelated;
+}
+.alex-head {
+  width: 32px; height: 32px;
+  margin: 0 auto;
+  position: relative;
+  background: #c69c6d;
+  border: 2px solid #8b6914;
+}
+.alex-hair {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 10px; background: #c44e1a;
+}
+.alex-hair::after {
+  content:''; position: absolute;
+  bottom: -8px; left: 0; width: 6px; height: 12px;
+  background: #c44e1a;
+}
+.alex-hair-right {
+  position: absolute;
+  bottom: -8px; right: 0; width: 6px; height: 12px;
+  background: #c44e1a;
+}
+.alex-eye-l, .alex-eye-r {
+  position: absolute; width: 5px; height: 4px;
+  background: #fff; top: 14px;
+}
+.alex-eye-l { left: 6px; }
+.alex-eye-r { right: 6px; }
+.alex-eye-l::after, .alex-eye-r::after {
+  content:''; position: absolute;
+  width: 3px; height: 4px; background: #2d6b1e;
+  top: 0; right: 0;
+}
+.alex-nose {
+  position: absolute; width: 4px; height: 3px;
+  background: #b5845a; top: 19px; left: 50%;
+  transform: translateX(-50%);
+}
+.alex-mouth {
+  position: absolute; width: 6px; height: 2px;
+  background: #c27a6b; bottom: 4px; left: 50%;
+  transform: translateX(-50%);
+}
+.alex-body {
+  width: 32px; height: 24px;
+  margin: 0 auto;
+  background: #71b556;
+  border: 2px solid #5a9040;
+  position: relative;
+}
+.alex-arm-l, .alex-arm-r {
+  position: absolute; width: 10px; height: 24px; top: 0;
+}
+.alex-arm-l {
+  left: -12px; background: #71b556; border: 2px solid #5a9040;
+}
+.alex-arm-l::after {
+  content:''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 6px; background: #c69c6d;
+}
+.alex-arm-r {
+  right: -12px; background: #71b556; border: 2px solid #5a9040;
+}
+.alex-arm-r::after {
+  content:''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 6px; background: #c69c6d;
+}
+.alex-legs {
+  width: 32px; margin: 0 auto; display: flex;
+}
+.alex-leg {
+  width: 16px; height: 20px;
+  background: #3a2a1a;
+  border: 2px solid #2a1a0a;
+  position: relative;
+}
+.alex-leg::after {
+  content:''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 4px; background: #555;
+}
+
+/* ========== CREEPER ========== */
+.creeper-face {
+  display: inline-block;
+  width: 76px; height: 76px;
+  background: #4aad2e;
+  position: relative;
+  image-rendering: pixelated;
+  box-shadow: inset 0 0 0 2px #3a8a22;
+}
+.creeper-face .eye-l, .creeper-face .eye-r {
+  position: absolute; width: 14px; height: 14px;
+  background: #1a1a1a; top: 14px;
+}
+.creeper-face .eye-l { left: 11px; }
+.creeper-face .eye-r { right: 11px; }
+.creeper-face .mouth {
+  position: absolute; width: 10px; height: 18px;
+  background: #1a1a1a; bottom: 14px;
+  left: 50%; transform: translateX(-50%);
+}
+.creeper-face .mouth::before, .creeper-face .mouth::after {
+  content:''; position: absolute;
+  width: 7px; height: 9px; background: #1a1a1a; top: 0;
+}
+.creeper-face .mouth::before { left: -7px; }
+.creeper-face .mouth::after { right: -7px; }
+
+/* ========== MINECRAFT WOLF/DOG ========== */
+.wolf {
+  width: 60px;
+  image-rendering: pixelated;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wolf-body-wrap {
+  position: relative;
+  width: 56px;
+  height: 52px;
+}
+.wolf-head {
+  width: 28px; height: 24px;
+  background: #d4cfc8;
+  border: 2px solid #a8a29e;
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.wolf-ear-l, .wolf-ear-r {
+  position: absolute;
+  width: 8px; height: 10px;
+  background: #d4cfc8;
+  border: 2px solid #a8a29e;
+  top: -8px;
+  z-index: 3;
+}
+.wolf-ear-l { left: 2px; }
+.wolf-ear-r { right: 2px; }
+.wolf-ear-l::after, .wolf-ear-r::after {
+  content: '';
+  position: absolute;
+  width: 4px; height: 4px;
+  background: #f0c8ca;
+  top: 2px; left: 50%;
+  transform: translateX(-50%);
+}
+.wolf-eye-l, .wolf-eye-r {
+  position: absolute;
+  width: 4px; height: 4px;
+  background: #1a1a1a;
+  top: 8px;
+  z-index: 3;
+}
+.wolf-eye-l { left: 5px; }
+.wolf-eye-r { right: 5px; }
+.wolf-nose {
+  position: absolute;
+  width: 6px; height: 4px;
+  background: #2a2a2a;
+  bottom: 5px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+.wolf-snout {
+  position: absolute;
+  width: 12px; height: 6px;
+  background: #e8e4de;
+  bottom: 2px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.wolf-torso {
+  width: 32px; height: 20px;
+  background: #d4cfc8;
+  border: 2px solid #a8a29e;
+  position: absolute;
+  top: 22px; left: 50%;
+  transform: translateX(-50%);
+}
+.wolf-belly {
+  position: absolute;
+  bottom: 0; left: 4px; right: 4px;
+  height: 8px;
+  background: #e8e4de;
+}
+.wolf-collar {
+  position: absolute;
+  top: 20px; left: 50%;
+  transform: translateX(-50%);
+  width: 24px; height: 5px;
+  background: #e03030;
+  border: 1px solid #b02020;
+  z-index: 4;
+}
+.wolf-legs {
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  display: flex;
+  justify-content: space-between;
+}
+.wolf-leg-front-l, .wolf-leg-front-r,
+.wolf-leg-back-l, .wolf-leg-back-r {
+  width: 6px; height: 12px;
+  background: #d4cfc8;
+  border: 2px solid #a8a29e;
+}
+.wolf-tail {
+  position: absolute;
+  top: 16px; right: -4px;
+  width: 6px; height: 18px;
+  background: #d4cfc8;
+  border: 2px solid #a8a29e;
+  transform: rotate(-30deg);
+  transform-origin: bottom center;
+  animation: wag 0.6s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes wag {
+  0% { transform: rotate(-40deg); }
+  100% { transform: rotate(-15deg); }
+}
+
+/* ========== VILLAGER ========== */
+.villager {
+  width: 58px;
+  image-rendering: pixelated;
+}
+.villager-head {
+  width: 36px; height: 36px;
+  margin: 0 auto;
+  position: relative;
+  background: #c69c6d;
+  border: 2px solid #8b6914;
+}
+.villager-hat {
+  position: absolute; top: -6px; left: -4px; right: -4px;
+  height: 14px; background: #8B7355;
+  border: 2px solid #6b5535;
+  border-radius: 2px 2px 0 0;
+}
+.villager-brow {
+  position: absolute; top: 12px; left: 4px; right: 4px;
+  height: 4px; background: #3b2212;
+}
+.villager-eye-l, .villager-eye-r {
+  position: absolute; width: 4px; height: 4px;
+  background: #2d5a1e; top: 18px;
+}
+.villager-eye-l { left: 6px; }
+.villager-eye-r { right: 6px; }
+.villager-nose {
+  position: absolute; width: 10px; height: 8px;
+  background: #b5845a; border: 1px solid #8b6914;
+  bottom: 4px; left: 50%; transform: translateX(-50%);
+  border-radius: 1px;
+}
+.villager-body {
+  width: 36px; height: 28px;
+  margin: 0 auto;
+  background: #8B7355;
+  border: 2px solid #6b5535;
+  position: relative;
+}
+.villager-body::after {
+  content:''; position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 4px; height: 100%; background: #fff;
+}
+.villager-arm-l, .villager-arm-r {
+  position: absolute; width: 10px; height: 22px;
+  background: #8B7355; border: 2px solid #6b5535; top: 2px;
+}
+.villager-arm-l { left: -10px; }
+.villager-arm-r { right: -10px; }
+.villager-robe-bottom {
+  width: 36px; height: 10px;
+  background: #7a6345;
+  border: 2px solid #6b5535;
+  margin: 0 auto;
+}
+
+.name {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 36px;
+  color: #ffd700;
+  text-shadow: 3px 3px 0 #8B6914, -1px -1px 0 #fff8;
+  margin: 8px 0;
+  letter-spacing: 3px;
+}
+
+.turns-five {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 13px;
+  color: #c8e6b0;
+  text-shadow: 2px 2px 0 #2a4a1a;
+}
+
+.subtitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 0 #2a4a1a;
+  margin-top: 12px;
+  letter-spacing: 1px;
+}
+
+.swords {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 5px;
+  font-size: 22px;
+}
+
+.content {
+  padding: 20px 30px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.info-block {
+  background: rgba(0,0,0,0.25);
+  border: 3px solid #3b5e28;
+  padding: 12px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.info-block.clickable {
+  cursor: pointer;
+}
+
+.info-block.clickable:hover {
+  background: rgba(0,0,0,0.4);
+  border-color: #6aaf48;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.info-block.clickable:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.info-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.info-label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 9px;
+  color: #a0d080;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+
+.info-value {
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.pixel-border-top {
+  height: 16px;
+  background: repeating-linear-gradient(90deg,
+    #4a7a30 0px, #4a7a30 8px,
+    #5a8f3c 8px, #5a8f3c 16px,
+    #6aaf48 16px, #6aaf48 24px,
+    #5a8f3c 24px, #5a8f3c 32px
+  );
+}
+
+.cats-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 15px 0 5px;
+}
+
+/* Minecraft Cat */
+.mc-cat {
+  width: 36px;
+  image-rendering: pixelated;
+  position: relative;
+}
+.mc-cat-head {
+  width: 20px; height: 16px;
+  margin: 0 auto;
+  position: relative;
+  border: 2px solid;
+}
+.mc-cat-ear-l, .mc-cat-ear-r {
+  position: absolute;
+  width: 6px; height: 6px;
+  top: -5px;
+  border: 2px solid;
+}
+.mc-cat-ear-l { left: 0; }
+.mc-cat-ear-r { right: 0; }
+.mc-cat-eye-l, .mc-cat-eye-r {
+  position: absolute;
+  width: 4px; height: 3px;
+  top: 5px; z-index: 2;
+}
+.mc-cat-eye-l { left: 2px; }
+.mc-cat-eye-r { right: 2px; }
+.mc-cat-nose {
+  position: absolute;
+  width: 3px; height: 2px;
+  background: #f0a0a0;
+  bottom: 3px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.mc-cat-body {
+  width: 16px; height: 14px;
+  margin: 0 auto;
+  border: 2px solid;
+  position: relative;
+}
+.mc-cat-legs {
+  width: 16px; margin: 0 auto;
+  display: flex; justify-content: space-between;
+}
+.mc-cat-leg {
+  width: 5px; height: 6px;
+  border: 1px solid;
+}
+.mc-cat-tail {
+  position: absolute;
+  width: 4px; height: 14px;
+  right: -6px; top: 0;
+  border: 1px solid;
+  border-radius: 0 4px 4px 0;
+  transform: rotate(-20deg);
+  transform-origin: bottom left;
+}
+
+/* Tabby (orange) */
+.cat-tabby .mc-cat-head { background: #e8a040; border-color: #b87828; }
+.cat-tabby .mc-cat-ear-l, .cat-tabby .mc-cat-ear-r { background: #e8a040; border-color: #b87828; }
+.cat-tabby .mc-cat-eye-l, .cat-tabby .mc-cat-eye-r { background: #50b848; }
+.cat-tabby .mc-cat-body { background: #e8a040; border-color: #b87828; }
+.cat-tabby .mc-cat-leg { background: #e8a040; border-color: #b87828; }
+.cat-tabby .mc-cat-tail { background: #e8a040; border-color: #b87828; }
+
+/* Tuxedo (black & white) */
+.cat-tuxedo .mc-cat-head { background: #2a2a2a; border-color: #1a1a1a; }
+.cat-tuxedo .mc-cat-ear-l, .cat-tuxedo .mc-cat-ear-r { background: #2a2a2a; border-color: #1a1a1a; }
+.cat-tuxedo .mc-cat-eye-l, .cat-tuxedo .mc-cat-eye-r { background: #e8d84a; }
+.cat-tuxedo .mc-cat-body { background: #2a2a2a; border-color: #1a1a1a; }
+.cat-tuxedo .mc-cat-leg { background: #e8e8e8; border-color: #aaa; }
+.cat-tuxedo .mc-cat-tail { background: #2a2a2a; border-color: #1a1a1a; }
+.cat-tuxedo .mc-cat-nose { background: #555; }
+
+/* Siamese (cream & brown) */
+.cat-siamese .mc-cat-head { background: #f0e0c8; border-color: #c8b498; }
+.cat-siamese .mc-cat-ear-l, .cat-siamese .mc-cat-ear-r { background: #8b6848; border-color: #6b4828; }
+.cat-siamese .mc-cat-eye-l, .cat-siamese .mc-cat-eye-r { background: #58a8d8; }
+.cat-siamese .mc-cat-body { background: #f0e0c8; border-color: #c8b498; }
+.cat-siamese .mc-cat-leg { background: #8b6848; border-color: #6b4828; }
+.cat-siamese .mc-cat-tail { background: #8b6848; border-color: #6b4828; }
+
+/* Calico (white & orange patches) */
+.cat-calico .mc-cat-head { background: #f0ece0; border-color: #c8c0b0; }
+.cat-calico .mc-cat-ear-l { background: #e8a040; border-color: #b87828; }
+.cat-calico .mc-cat-ear-r { background: #f0ece0; border-color: #c8c0b0; }
+.cat-calico .mc-cat-eye-l, .cat-calico .mc-cat-eye-r { background: #50b848; }
+.cat-calico .mc-cat-body { background: #f0ece0; border-color: #c8c0b0; }
+.cat-calico .mc-cat-leg { background: #e8a040; border-color: #b87828; }
+.cat-calico .mc-cat-tail { background: #e8a040; border-color: #b87828; }
+
+/* Gray (british shorthair) */
+.cat-gray .mc-cat-head { background: #8a8a90; border-color: #6a6a70; }
+.cat-gray .mc-cat-ear-l, .cat-gray .mc-cat-ear-r { background: #8a8a90; border-color: #6a6a70; }
+.cat-gray .mc-cat-eye-l, .cat-gray .mc-cat-eye-r { background: #e8a830; }
+.cat-gray .mc-cat-body { background: #8a8a90; border-color: #6a6a70; }
+.cat-gray .mc-cat-leg { background: #8a8a90; border-color: #6a6a70; }
+.cat-gray .mc-cat-tail { background: #8a8a90; border-color: #6a6a70; }
+
+.rsvp {
+  text-align: center;
+  padding: 5px 20px 20px;
+}
+
+.rsvp-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 9px;
+  color: #ffd700;
+  text-shadow: 2px 2px 0 #2a4a1a;
+  line-height: 2;
+}
+
+.rsvp-button {
+  margin-top: 12px;
+  padding: 12px 24px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  color: #fff;
+  background: #4a7a30;
+  border: 4px solid #3b5e28;
+  box-shadow: 
+    inset 0 0 0 2px #5a8f3c,
+    0 4px 0 #2a4a1a,
+    0 6px 12px rgba(0,0,0,0.4);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: 1px;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.rsvp-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    inset 0 0 0 2px #6aaf48,
+    0 6px 0 #2a4a1a,
+    0 8px 16px rgba(0,0,0,0.5);
+}
+
+.rsvp-button:active {
+  transform: translateY(2px);
+  box-shadow: 
+    inset 0 0 0 2px #4a7a30,
+    0 2px 0 #2a4a1a,
+    0 3px 8px rgba(0,0,0,0.3);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-container {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  max-width: 600px;
+  background: #2d1a0e;
+  border: 6px solid #3b5e28;
+  box-shadow: 
+    inset 0 0 0 3px #6aaf48,
+    0 0 0 3px #2a4a1a,
+    0 8px 32px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  background: #4a7a30;
+  border: 3px solid #3b5e28;
+  box-shadow: inset 0 0 0 1px #5a8f3c;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: #5a8f3c;
+  border-color: #6aaf48;
+  transform: scale(1.1);
+}
+
+.modal-close:active {
+  transform: scale(0.95);
+  background: #3b5e28;
+}
+
+.modal-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fff;
+}
+
+.sparkles {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.sparkle {
+  position: absolute;
+  width: 4px; height: 4px;
+  background: #ffd700;
+  animation: twinkle 2s ease-in-out infinite;
+}
+.sparkle:nth-child(1) { top: 12%; left: 8%; animation-delay: 0s; }
+.sparkle:nth-child(2) { top: 8%; right: 12%; animation-delay: 0.5s; }
+.sparkle:nth-child(3) { top: 22%; left: 85%; animation-delay: 1s; }
+.sparkle:nth-child(4) { top: 4%; left: 45%; animation-delay: 1.5s; }
+.sparkle:nth-child(5) { top: 18%; left: 20%; animation-delay: 0.8s; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    border: 6px solid #3b5e28;
+  }
+
+  .header {
+    padding: 20px 12px 8px;
+  }
+
+  .invite-text {
+    font-size: 9px;
+  }
+
+  .characters-row {
+    gap: 8px;
+    transform: scale(0.8);
+  }
+
+  .name {
+    font-size: 28px;
+  }
+
+  .turns-five {
+    font-size: 11px;
+  }
+
+  .subtitle {
+    font-size: 8px;
+  }
+
+  .content {
+    padding: 16px 16px 20px;
+    gap: 12px;
+  }
+
+  .info-block {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .info-icon {
+    font-size: 22px;
+  }
+
+  .info-label {
+    font-size: 8px;
+  }
+
+  .info-value {
+    font-size: 19px;
+  }
+
+  .rsvp-text {
+    font-size: 8px;
+  }
+
+  .rsvp-button {
+    padding: 10px 20px;
+    font-size: 9px;
+  }
+
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-container {
+    width: 95vw;
+    height: 95vh;
+    border: 4px solid #3b5e28;
+  }
+
+  .modal-close {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    top: 6px;
+    right: 6px;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    padding: 8px;
+  }
+
+  .card {
+    border: 4px solid #3b5e28;
+  }
+
+  .header {
+    padding: 16px 10px 6px;
+  }
+
+  .invite-text {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .characters-row {
+    gap: 6px;
+    transform: scale(0.65);
+  }
+
+  .name {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+
+  .turns-five {
+    font-size: 9px;
+  }
+
+  .subtitle {
+    font-size: 7px;
+    margin-top: 8px;
+  }
+
+  .content {
+    padding: 12px 12px 16px;
+    gap: 10px;
+  }
+
+  .info-block {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .info-icon {
+    font-size: 20px;
+  }
+
+  .info-label {
+    font-size: 7px;
+  }
+
+  .info-value {
+    font-size: 17px;
+    line-height: 1.2;
+  }
+
+  .rsvp-text {
+    font-size: 7px;
+  }
+
+  .rsvp-button {
+    padding: 8px 16px;
+    font-size: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .modal-overlay {
+    padding: 5px;
+  }
+
+  .modal-container {
+    width: 98vw;
+    height: 98vh;
+    border: 3px solid #3b5e28;
+  }
+
+  .modal-close {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    top: 4px;
+    right: 4px;
+  }
+}
+
+@media print {
+  body { background: white; padding: 0; }
+  .card { box-shadow: none; border: 4px solid #3b5e28; }
+  .sparkle, .wolf-tail { animation: none; }
+}
